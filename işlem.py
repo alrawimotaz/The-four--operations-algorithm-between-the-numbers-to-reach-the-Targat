@@ -1,16 +1,16 @@
 import random
 
-# 1 haneli 5 random sayılar
+# 1 digit 5 random numbers
 numbers = [random.randint(1,9) for i in range(5)]
 
-# 2 haneli on'un katları olan sayı
+#Number with ten floors with 2 digits
 numbers2 = [random.randint(1,9)*10 for i in range(1)]
 numbers=numbers+numbers2
 
-# Hedef sayıyı 
+# target
 target_number = random.randint(100, 999)
 
-# Tüm işlemler için fonksiyon 
+# fun for all opertions
 def calculate(numbers, target_number):
     operators = ['+', '-', '*', '/']
     results = []
@@ -45,11 +45,11 @@ def calculate(numbers, target_number):
     closest_result = min(results, key=lambda x: abs(x[0]-target_number))
     return closest_result[0], closest_result[1]
 
-# Sonuçları hesaplamak
+# Calculating the results
 result, expression = calculate(numbers, target_number)
 
-# Sonuçları yazdırmak
-print("rastgele sayılar: ", numbers)
-print("hedef: ", target_number)
-print("işlem: ", expression)
-print("sonuç: ", result)
+# print the results
+print("random numbers: ", numbers)
+print("target: ", target_number)
+print("expression: ", expression)
+print("result: ", result)
